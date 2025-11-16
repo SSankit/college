@@ -1,0 +1,94 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "candidate.####",
+ "creation": "2025-11-15 17:29:22.682767",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "candidate_type",
+  "candidate",
+  "course",
+  "registration_fees",
+  "column_break_nzss",
+  "course_fees",
+  "total_fees",
+  "semester"
+ ],
+ "fields": [
+  {
+   "fieldname": "candidate_type",
+   "fieldtype": "Link",
+   "label": "Candidate Type",
+   "link_filters": "[[\"DocType\",\"name\",\"in\",[\"Professor\",\"Student\"]]]",
+   "options": "DocType"
+  },
+  {
+   "fetch_from": "course.course_fees",
+   "fieldname": "course_fees",
+   "fieldtype": "Link",
+   "label": "Course Fees",
+   "options": "Course"
+  },
+  {
+   "fieldname": "candidate",
+   "fieldtype": "Dynamic Link",
+   "label": "Candidate",
+   "options": "candidate_type"
+  },
+  {
+   "fieldname": "course",
+   "fieldtype": "Link",
+   "label": "Course",
+   "options": "Course"
+  },
+  {
+   "default": "500",
+   "fieldname": "registration_fees",
+   "fieldtype": "Currency",
+   "label": "Registration Fees"
+  },
+  {
+   "fieldname": "total_fees",
+   "fieldtype": "Currency",
+   "label": "Total Fees"
+  },
+  {
+   "fieldname": "semester",
+   "fieldtype": "Int",
+   "label": "Semester"
+  },
+  {
+   "fieldname": "column_break_nzss",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-16 05:23:01.124466",
+ "modified_by": "Administrator",
+ "module": "College",
+ "name": "Enrolment",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
